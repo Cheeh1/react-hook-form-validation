@@ -8,17 +8,31 @@ import {
 import "./App.css";
 
 const App = () => {
-  const [formData, setFormData] = useState({firstName:"", lastName:"", phone:"", email: "", password:"", message:""})
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    password: "",
+    message: ""
+  });
 
+    // registering the form input function
     const handleChange = (event) => {
+      const { name, value } = event.target;
       setFormData((prevFormData) => {
         return {
           ...prevFormData,
-          [event.target.name]: event.target.Value,
+          [name]: value,
         };
       });
     };
   
+    // const handleSubmit = (event) => {
+    //     event.preventDefault()
+    // }
+
+    // Form validation function using react hook form
   const {
     register,
     handleSubmit,
