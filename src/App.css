@@ -1,0 +1,114 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #f1f4f8;
+  font-family: Inter;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 150px 100px 100px 300px;
+}
+
+.form-flex {
+  display: flex;
+  gap: 25px;
+}
+
+.form-flex-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-label {
+  color: #344054;
+  font-size: 1.4rem;
+}
+
+.txt-field {
+  border: 1px solid #D0D5DD;
+  background-color: #FFFFFF;
+  width: 348px;
+  height: 44px;
+  padding: 10px 14px;
+  font-size: 1.6rem;
+}
+
+.txt-field::placeholder, .message-field::placeholder, .email-field::placeholder {
+  font-size: 1.6rem;
+  color: #667085;
+  font-family: sans-serif;
+}
+
+.email-field {
+  width: 720px;
+  height: 44px;
+  border: 1px solid #D0D5DD;
+  background-color: #FFFFFF;
+  padding: 10px 14px;
+  font-size: 1.6rem;
+}
+
+.message-field { 
+  min-width: 720px;
+  max-width: 720px;
+  min-height: 132px;
+  max-height: 132px;
+  padding: 12px 14px;
+  font-size: 1.6rem;
+}
+
+.check-box-input {
+  display: flex;
+  gap: 5px;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #667085;
+}
+
+.form-btn {
+  background-color: #B2DDFF;
+  border: 1px solid #B2DDFF;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  width: 720px;
+  height: 48px;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.form-btn-1 {
+  background-color: #1570EF;
+  border: 1px solid #1570EF;
+  border-radius: 8px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  width: 720px;
+  height: 48px;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
