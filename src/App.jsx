@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
   Email_Regex_Validation,
@@ -7,6 +8,17 @@ import {
 import "./App.css";
 
 const App = () => {
+  const [formData, setFormData] = useState({firstName:"", lastName:"", phone:"", email: "", password:"", message:""})
+
+    const handleChange = (event) => {
+      setFormData((prevFormData) => {
+        return {
+          ...prevFormData,
+          [event.target.name]: event.target.Value,
+        };
+      });
+    };
+  
   const {
     register,
     handleSubmit,
@@ -28,6 +40,8 @@ const App = () => {
               placeholder="Enter your first name"
               className="txt-field"
               id="first_name"
+              onChange={handleChange}
+              defaultValue={formData.firstName}
               {...register("firstName", { required: true, minLength: 3 })}
             />
             {errors.firstName && (
@@ -43,6 +57,8 @@ const App = () => {
               placeholder="Enter your last name"
               className="txt-field"
               id="last_name"
+              onChange={handleChange}
+              defaultValue={formData.lastName}
               {...register("lastName", { required: true, minLength: 3 })}
             />
             {errors.lastName && (
@@ -59,6 +75,8 @@ const App = () => {
             placeholder="+234"
             className="txt-field"
             id="phone"
+            onChange={handleChange}
+            defaultValue={formData.phone}
             {...register("phone", {
               required: true,
               pattern: Phone_Regex_Validation,
@@ -75,6 +93,8 @@ const App = () => {
             placeholder="yourname@gmail.com"
             className="email-field"
             id="email"
+            onChange={handleChange}
+            defaultValue={formData.email}
             {...register("email", {
               required: true,
               pattern: Email_Regex_Validation,
@@ -91,6 +111,8 @@ const App = () => {
             placeholder="********"
             className="email-field"
             id="phone"
+            onChange={handleChange}
+            defaultValue={formData.password}
             {...register("password", {
               required: true,
               pattern: Password_Regex_Validation,
@@ -111,6 +133,8 @@ const App = () => {
             name="message"
             className="message-field"
             placeholder="Send me a message and I will reply you as soon as possible..."
+            onChange={handleChange}
+            defaultValue={formData.message}
             {...register("message", { required: true, minLength: 10 })}
           ></textarea>
           {errors.message && <p className="error">Characters too short</p>}
